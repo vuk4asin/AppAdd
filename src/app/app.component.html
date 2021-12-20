@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card">
+  <div class="ui card">
     <h1>Team Generator</h1>
     <ul class="list">
       <li *ngFor ="let member of members" >{{ member }}</li>
@@ -14,4 +14,11 @@
       </div>
       <p *ngIf="errorMessage" class="err-msg">{{ errorMessage }}</p>
   </div>
-</div>
+
+  <div *ngIf="teams.length" class="teams-container">
+    <app-team *ngFor="let team  of teams; let i=index" [team]="team" [index]="i">
+      
+    </app-team>
+  </div>
+
+</div> 
